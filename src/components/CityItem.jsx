@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 //import styles from "./cityItem.module.css";
 import { useCities } from "../contexts/CitiesContext";
-import styles from "./cityItem.module.css";
+import styles from "./CityItem.module.css";
 import { Link } from "react-router-dom";
 export default function cityItem({ city }) {
   const {
