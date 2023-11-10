@@ -56,7 +56,7 @@ function CitiesProvider({ children }) {
     async function fetchCities() {
       try {
         dispatch({ type: "loading" });
-        const res = await fetch("http://localhost:8000/cities");
+        const res = await fetch("/db.json/cities");
         const cities = await res.json();
         dispatch({ type: "cities/loaded", payload: cities });
       } catch (error) {
@@ -69,7 +69,7 @@ function CitiesProvider({ children }) {
   async function getCity(id) {
     try {
       dispatch({ type: "loading" });
-      const res = await fetch(`http://localhost:8000/cities/${id}`);
+      const res = await fetch(`/db.json/cities/${id}`);
       const currentCity = await res.json();
       dispatch({ type: "city/loaded", payload: currentCity });
     } catch (error) {
@@ -79,7 +79,7 @@ function CitiesProvider({ children }) {
   async function createCity(city) {
     try {
       dispatch;
-      await fetch(`http://localhost:8000/cities/`, {
+      await fetch(`/db.json/cities/`, {
         method: "POST",
         body: JSON.stringify(city),
         headers: {
@@ -95,7 +95,7 @@ function CitiesProvider({ children }) {
   async function deleteCity(id) {
     try {
       dispatch({ type: "loading" });
-      await fetch(`http://localhost:8000/cities/${id}`, { method: "DELETE" });
+      await fetch(`/db.json/cities/${id}`, { method: "DELETE" });
     } catch (error) {
       dispatch({ type: "rejected", payload: error.message });
     } finally {
