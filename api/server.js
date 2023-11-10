@@ -29,7 +29,7 @@ server.options('*', (req, res) => {
 });
 
 // Vercel automatically assigns a port
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 server.listen(PORT, () => {
     console.log(`JSON Server is running on port ${PORT}`);
 });
